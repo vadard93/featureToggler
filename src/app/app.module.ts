@@ -13,9 +13,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTableModule} from '@angular/material/table';
 import {MatListModule} from '@angular/material/list';
+import { FeaturesService } from './features/features.service';
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule, MatButtonModule, MatCheckboxModule, MatExpansionModule, MatTableModule, MatIconModule, MatListModule ],
   declarations: [ AppComponent, FeaturesComponent,  ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [FeaturesService]
 })
 export class AppModule { }

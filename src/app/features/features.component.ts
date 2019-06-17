@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Feature} from './feature';
 
 @Component({
   selector: 'app-features',
@@ -6,14 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./features.component.css']
 })
 export class FeaturesComponent implements OnInit {
- displayedColumns: string[] = ['service', 'status'];
-  dataSource = ELEMENT_DATA;
+  @Input() features: Feature[];
+  displayedColumns: string[] = ['service', 'status'];
+  dataSource: Feature[];
+
 
   constructor() { }
 
   ngOnInit() {
+    this.dataSource = this.features;
   }
 
+  changeStatus(featureId: string, serviceId: string, event){
+    alert(featureId);
+      event.stopPropagation();
+  }
 }
 export interface PeriodicElement {
   service: string;
